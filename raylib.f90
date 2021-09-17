@@ -471,5 +471,17 @@ module raylib
     integer(c_int) :: BLEND_ADD_COLORS      = 3 ! Blend textures adding colors (alternative)
     integer(c_int) :: BLEND_SUBTRACT_COLORS = 4 ! Blend textures subtracting colors (alternative)
     integer(c_int) :: BLEND_CUSTOM          = 5 ! Belnd textures using custom src/dst factors (use rlSetBlendMode())
+    ! Gestures
+    integer(c_int) :: GESTURE_NONE        = 0
+    integer(c_int) :: GESTURE_TAP         = 1
+    integer(c_int) :: GESTURE_DOUBLETAP   = 2
+    integer(c_int) :: GESTURE_HOLD        = 4
+    integer(c_int) :: GESTURE_DRAG        = 8
+    integer(c_int) :: GESTURE_SWIPE_RIGHT = 16
+    integer(c_int) :: GESTURE_SWIPE_LEFT  = 32
+    integer(c_int) :: GESTURE_SWIPE_UP    = 64
+    integer(c_int) :: GESTURE_SWIPE_DOWN  = 128
+    integer(c_int) :: GESTURE_PINCH_IN    = 256
+    integer(c_int) :: GESTURE_PINCH_OUT   = 512
 
 end module raylib
