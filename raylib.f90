@@ -464,5 +464,12 @@ module raylib
     integer(c_int) :: FONT_DEFAULT = 0 ! Default font generation, anti-aliased
     integer(c_int) :: FONT_BITMAP  = 1 ! Bitmap font generation, no anti-aliasing
     integer(c_int) :: FONT_SDF     = 2 ! SDF font generation, requires external shader
+    ! Color blending modes (pre-defined)
+    integer(c_int) :: BLEND_ALPHA           = 0 ! Blend textures considering alpha (default)
+    integer(c_int) :: BLEND_ADDITIVE        = 1 ! Blend textures adding colors
+    integer(c_int) :: BLEND_MULTIPLIED      = 2 ! Blend textures multiplying colors
+    integer(c_int) :: BLEND_ADD_COLORS      = 3 ! Blend textures adding colors (alternative)
+    integer(c_int) :: BLEND_SUBTRACT_COLORS = 4 ! Blend textures subtracting colors (alternative)
+    integer(c_int) :: BLEND_CUSTOM          = 5 ! Belnd textures using custom src/dst factors (use rlSetBlendMode())
 
 end module raylib
