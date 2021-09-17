@@ -366,5 +366,17 @@ module raylib
     integer(c_int) :: GAMEPAD_AXIS_RIGHT_Y = 3
     integer(c_int) :: GAMEPAD_AXIS_LEFT_TRIGGER = 4       ! [1..-1] (pressure-level)
     integer(c_int) :: GAMEPAD_AXIS_RIGHT_TRIGGER = 5      ! [1..-1] (pressure-level)
+    ! Material map index
+    integer(c_int) :: MATERIAL_MAP_ALBEDO     = 0
+    integer(c_int) :: MATERIAL_MAP_METALNESS  = 1
+    integer(c_int) :: MATERIAL_MAP_NORMAL     = 2
+    integer(c_int) :: MATERIAL_MAP_ROUGHNESS  = 3
+    integer(c_int) :: MATERIAL_MAP_OCCLUSION  = 4
+    integer(c_int) :: MATERIAL_MAP_EMISSION   = 5
+    integer(c_int) :: MATERIAL_MAP_HEIGHT     = 6
+    integer(c_int) :: MATERIAL_MAP_BRDG       = 7
+    integer(c_int) :: MATERIAL_MAP_CUBEMAP    = 8        ! NOTE: Uses GL_TEXTURE_CUBE_MAP
+    integer(c_int) :: MATERIAL_MAP_IRRADIANCE = 9        ! NOTE: Uses GL_TEXTURE_CUBE_MAP
+    integer(c_int) :: MATERIAL_MAP_PREFILTER  = 10       ! NOTE: Uses GL_TEXTURE_CUBE_MAP
 
 end module raylib
