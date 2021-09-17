@@ -168,4 +168,17 @@ module raylib
         type(c_ptr) :: ctx_data
     end type music
 
+    type, bind(c) :: vr_device_info
+        integer(c_int) :: h_resolution
+        integer(c_int) :: v_resolution
+        real(c_float) :: h_screen_size
+        real(c_float) :: v_screen_size
+        real(c_float) :: v_screen_center
+        real(c_float) :: eye_to_screen_distance
+        real(c_float) :: lens_separation_distance
+        real(c_float) :: interpupillary_distance
+        real(c_float), dimension(4) :: lens_distortion_values
+        real(c_float), dimension(4) :: chroma_ab_correction
+    end type vr_device_info
+
 end module raylib
