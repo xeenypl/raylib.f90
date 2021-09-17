@@ -49,5 +49,12 @@ module raylib
         integer(c_int) :: mipmaps
         integer(c_int) :: format
     end type texture
+    
+    type, bind(c) :: render_texture
+        integer(c_int) :: id
+        type(texture) :: texture
+        type(texture) :: depth
+    end type render_texture
+
 
 end module raylib
