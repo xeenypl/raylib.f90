@@ -19,6 +19,13 @@ module raylib
         real(c_float) :: z
         real(c_float) :: w
     end type vector4
+
+    type, bind(c) :: matrix
+        real(c_float) :: m0,  m1,  m2,  m3
+        real(c_float) :: m4,  m5,  m6,  m7
+        real(c_float) :: m8,  m9,  m10, m11
+        real(c_float) :: m12, m13, m14, m15
+    end type matrix
     
     type, bind(c) :: color
         integer(c_int8_t) :: r
