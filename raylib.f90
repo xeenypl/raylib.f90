@@ -90,4 +90,11 @@ module raylib
         integer(c_int) :: projection
     end type camera3d
 
+    type, bind(c) :: camera2d
+        type(vector2) :: offset
+        type(vector2) :: terget
+        real(c_float) :: rotation
+        real(c_float) :: zoom
+    end type camera2d
+
 end module raylib
