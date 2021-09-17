@@ -154,4 +154,9 @@ module raylib
         integer(c_int) :: channels
     end type audio_stream
 
+    type, bind(c) :: sound
+        type(audio_stream) :: stream
+        integer(c_int) :: sample_count
+    end type sound
+
 end module raylib
