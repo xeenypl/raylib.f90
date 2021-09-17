@@ -147,4 +147,11 @@ module raylib
         type(c_ptr) :: data
     end type wave
 
+    type, bind(c) :: audio_stream
+        type(c_ptr) :: buffer
+        integer(c_int) :: sample_rate
+        integer(c_int) :: sample_size
+        integer(c_int) :: channels
+    end type audio_stream
+
 end module raylib
