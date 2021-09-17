@@ -72,5 +72,12 @@ module raylib
         integer(c_int) :: layout
     end type n_patch_info
 
+    type, bind(c) :: char_info
+        integer(c_int) :: value
+        integer(c_int) :: offset_x
+        integer(c_int) :: offset_y
+        integer(c_int) :: advance_x
+        type(image) :: image
+    end type char_info
 
 end module raylib
