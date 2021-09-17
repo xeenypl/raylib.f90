@@ -318,5 +318,9 @@ module raylib
     integer(c_int) :: KEY_MENU            = 82
     integer(c_int) :: KEY_VOLUME_UP       = 24
     integer(c_int) :: KEY_VOLUME_DOWN     = 25
+    ! Mouse buttons
+    integer(c_int) :: MOUSE_LEFT_BUTTON   = 0
+    integer(c_int) :: MOUSE_RIGHT_BUTTON  = 1
+    integer(c_int) :: MOUSE_MIDDLE_BUTTON = 2
 
 end module raylib
