@@ -106,4 +106,12 @@ module raylib
         real(c_float) :: value
     end type material_map
 
+    ! todo material
+
+    type, bind(c) :: transform
+        type(vector3) :: translation
+        type(vector4) :: rotation
+        type(vector3) :: scale
+    end type transform
+
 end module raylib
