@@ -192,4 +192,16 @@ module raylib
         real(c_float), dimension(2) :: scale_in
     end type vr_stereo_config
 
+    ! todo ConfigFlags
+
+    ! Trace log level
+    integer(c_int) :: LOG_ALL     = 0
+    integer(c_int) :: LOG_TRACE   = 1
+    integer(c_int) :: LOG_DEBUG   = 2
+    integer(c_int) :: LOG_INFO    = 3
+    integer(c_int) :: LOG_WARNING = 4
+    integer(c_int) :: LOG_ERROR   = 5
+    integer(c_int) :: LOG_FATAL   = 6
+    integer(c_int) :: LOG_NONE    = 7
+
 end module raylib
