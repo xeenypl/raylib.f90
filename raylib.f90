@@ -132,4 +132,11 @@ module raylib
         type(vector3) :: max
     end type bounding_box
 
+    type, bind(c) :: ray_hit_info
+        logical(c_bool) :: hit
+        real(c_float) :: distance
+        type(vector3) :: position
+        type(vector3) :: normal
+    end type ray_hit_info
+
 end module raylib
