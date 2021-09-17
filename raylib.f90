@@ -489,5 +489,8 @@ module raylib
     integer(c_int) :: CAMERA_ORBITAL      = 2
     integer(c_int) :: CAMERA_FIRST_PERSON = 3
     integer(c_int) :: CAMERA_THIRD_PERSON = 4
+    ! Camera projection
+    integer(c_int) :: CAMERA_PERSPECTIVE  = 0
+    integer(c_int) :: CAMERA_ORTHOGRAPHIC = 1
 
 end module raylib
