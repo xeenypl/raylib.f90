@@ -97,4 +97,13 @@ module raylib
         real(c_float) :: zoom
     end type camera2d
 
+    ! todo mesh
+    ! todo shader
+
+    type, bind(c) :: material_map
+        type(texture) :: texture
+        type(color) :: color
+        real(c_float) :: value
+    end type material_map
+
 end module raylib
