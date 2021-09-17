@@ -359,5 +359,12 @@ module raylib
     ! These are the joystick press in buttons
     integer(c_int) :: GAMEPAD_BUTTON_LEFT_THUMB       = 16
     integer(c_int) :: GAMEPAD_BUTTON_RIGHT_THUMB      = 17
+    ! Gamepad axis
+    integer(c_int) :: GAMEPAD_AXIS_LEFT_X = 0
+    integer(c_int) :: GAMEPAD_AXIS_LEFT_Y = 1
+    integer(c_int) :: GAMEPAD_AXIS_RIGHT_X = 2
+    integer(c_int) :: GAMEPAD_AXIS_RIGHT_Y = 3
+    integer(c_int) :: GAMEPAD_AXIS_LEFT_TRIGGER = 4       ! [1..-1] (pressure-level)
+    integer(c_int) :: GAMEPAD_AXIS_RIGHT_TRIGGER = 5      ! [1..-1] (pressure-level)
 
 end module raylib
