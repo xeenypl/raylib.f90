@@ -583,8 +583,8 @@ module raylib
         subroutine minimize_window () bind (c, name="MinimizeWindow")
         end subroutine minimize_window
 
-        subroutine Restore_window () bind (c, name="RestoreWindow")
-        end subroutine Restore_window
+        subroutine restore_window () bind (c, name="RestoreWindow")
+        end subroutine restore_window
 
         subroutine set_window_icon(image_) bind (c, name="SetWindowIcon")
             import :: image
@@ -708,6 +708,29 @@ module raylib
         !     integer(c_int), intent(in), value :: monitor
         !     character(c_char), dimension(*) :: res
         ! end function get_clipboard_text
+
+        ! Cursor-related functions
+        subroutine show_cursor () bind (c, name="ShowCursor")
+        end subroutine show_cursor
+
+        subroutine hide_cursor () bind (c, name="HideCursor")
+        end subroutine hide_cursor
+
+        function is_cursor_hidden () result (res) bind (c, name="IsCursorHidden")
+            import :: c_bool
+            logical(c_bool) :: res
+        end function is_cursor_hidden
+
+        subroutine enable_cursor () bind (c, name="EnableCursor")
+        end subroutine enable_cursor
+
+        subroutine disable_cursor () bind (c, name="DisableCursor")
+        end subroutine disable_cursor
+
+        function is_cursor_on_screen () result (res) bind (c, name="IsCursorOnScreen")
+            import :: c_bool
+            logical(c_bool) :: res
+        end function is_cursor_on_screen
 
     end interface
 end module raylib
