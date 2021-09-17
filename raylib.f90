@@ -483,5 +483,11 @@ module raylib
     integer(c_int) :: GESTURE_SWIPE_DOWN  = 128
     integer(c_int) :: GESTURE_PINCH_IN    = 256
     integer(c_int) :: GESTURE_PINCH_OUT   = 512
+    ! Camera system modes
+    integer(c_int) :: CAMERA_CUSTOM       = 0
+    integer(c_int) :: CAMERA_FREE         = 1
+    integer(c_int) :: CAMERA_ORBITAL      = 2
+    integer(c_int) :: CAMERA_FIRST_PERSON = 3
+    integer(c_int) :: CAMERA_THIRD_PERSON = 4
 
 end module raylib
