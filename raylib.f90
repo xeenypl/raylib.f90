@@ -19,5 +19,12 @@ module raylib
         real(c_float) :: z
         real(c_float) :: w
     end type vector4
+    
+    type, bind(c) :: color
+        integer(c_int8_t) :: r
+        integer(c_int8_t) :: g
+        integer(c_int8_t) :: b
+        integer(c_int8_t) :: a
+    end type color
 
 end module raylib
