@@ -80,4 +80,14 @@ module raylib
         type(image) :: image
     end type char_info
 
+    ! todo: font
+
+    type, bind(c) :: camera3d
+        type(vector3) :: position
+        type(vector3) :: terget
+        type(vector3) :: up
+        real(c_float) :: fovy
+        integer(c_int) :: projection
+    end type camera3d
+
 end module raylib
