@@ -119,4 +119,12 @@ module raylib
         integer(c_int) :: parent
     end type bone_info
 
+    ! todo model
+    ! todo model_animation
+
+    type, bind(c) :: ray
+        type(vector3) :: position
+        type(vector3) :: direction
+    end type ray
+
 end module raylib
