@@ -448,5 +448,10 @@ module raylib
     integer(c_int) :: TEXTURE_FILTER_ANISOTROPIC_4X  = 3 ! Anisotropic filtering 4x
     integer(c_int) :: TEXTURE_FILTER_ANISOTROPIC_8X  = 4 ! Anisotropic filtering 8x
     integer(c_int) :: TEXTURE_FILTER_ANISOTROPIC_16X = 5 ! Anisotropic filtering 16x
+    ! Texture parameters: wrap mode
+    integer(c_int) :: TEXTURE_WRAP_REPEAT        = 0 ! Repeats texture in tiled mode
+    integer(c_int) :: TEXTURE_WRAP_CLAMP         = 1 ! Clamps texture to edge pixel in tiled mode
+    integer(c_int) :: TEXTURE_WRAP_MIRROR_REPEAT = 2 ! Mirrors and repeats the texture in tiled mode
+    integer(c_int) :: TEXTURE_WRAP_MIRROR_CLAMP  = 3 ! Mirrors and clamps to border the texture in tiled mode
 
 end module raylib
