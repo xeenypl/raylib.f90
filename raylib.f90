@@ -181,4 +181,15 @@ module raylib
         real(c_float), dimension(4) :: chroma_ab_correction
     end type vr_device_info
 
+    type, bind(c) :: vr_stereo_config
+        type(matrix), dimension(2) :: projection
+        type(matrix), dimension(2) :: view_offset
+        real(c_float), dimension(2) :: left_lens_center
+        real(c_float), dimension(2) :: right_lens_center
+        real(c_float), dimension(2) :: left_screen_center
+        real(c_float), dimension(2) :: right_screen_center
+        real(c_float), dimension(2) :: scale
+        real(c_float), dimension(2) :: scale_in
+    end type vr_stereo_config
+
 end module raylib
