@@ -409,5 +409,15 @@ module raylib
     integer(c_int) :: SHADER_LOC_MAP_IRRADIANCE    = 23
     integer(c_int) :: SHADER_LOC_MAP_PREFILTER     = 24
     integer(c_int) :: SHADER_LOC_MAP_BRDF          = 25
+    ! Shader uniform data type
+    integer(c_int) :: SHADER_UNIFORM_FLOAT     = 0
+    integer(c_int) :: SHADER_UNIFORM_VEC2      = 1
+    integer(c_int) :: SHADER_UNIFORM_VEC3      = 2
+    integer(c_int) :: SHADER_UNIFORM_VEC4      = 3
+    integer(c_int) :: SHADER_UNIFORM_INT       = 4
+    integer(c_int) :: SHADER_UNIFORM_IVEC2     = 5
+    integer(c_int) :: SHADER_UNIFORM_IVEC3     = 6
+    integer(c_int) :: SHADER_UNIFORM_IVEC4     = 7
+    integer(c_int) :: SHADER_UNIFORM_SAMPLER2D = 8
 
 end module raylib
