@@ -127,4 +127,9 @@ module raylib
         type(vector3) :: direction
     end type ray
 
+    type, bind(c) :: bounding_box
+        type(vector3) :: min
+        type(vector3) :: max
+    end type bounding_box
+
 end module raylib
