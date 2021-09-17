@@ -441,5 +441,12 @@ module raylib
     integer(c_int) :: PIXELFORMAT_COMPRESSED_PVRT_RGBA      = 19 ! 4 bpp
     integer(c_int) :: PIXELFORMAT_COMPRESSED_ASTC_4x4_RGBA  = 20 ! 8 bpp
     integer(c_int) :: PIXELFORMAT_COMPRESSED_ASTC_8x8_RGBA  = 21 ! 2 bpp
+    ! Texture parameters: filter mode
+    integer(c_int) :: TEXTURE_FILTER_POINT           = 0 ! No filter, just pixel aproximation
+    integer(c_int) :: TEXTURE_FILTER_BILINEAR        = 1 ! Linear filtering
+    integer(c_int) :: TEXTURE_FILTER_TRILINEAR       = 2 ! Trilinear filtering (linear with mipmaps)
+    integer(c_int) :: TEXTURE_FILTER_ANISOTROPIC_4X  = 3 ! Anisotropic filtering 4x
+    integer(c_int) :: TEXTURE_FILTER_ANISOTROPIC_8X  = 4 ! Anisotropic filtering 8x
+    integer(c_int) :: TEXTURE_FILTER_ANISOTROPIC_16X = 5 ! Anisotropic filtering 16x
 
 end module raylib
