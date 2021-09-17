@@ -26,5 +26,12 @@ module raylib
         integer(c_int8_t) :: b
         integer(c_int8_t) :: a
     end type color
+    
+    type, bind(c) :: rectangle
+        real(c_float) :: x
+        real(c_float) :: y
+        real(c_float) :: width
+        real(c_float) :: height
+    end type rectangle
 
 end module raylib
