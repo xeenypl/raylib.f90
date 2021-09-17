@@ -159,4 +159,13 @@ module raylib
         integer(c_int) :: sample_count
     end type sound
 
+    type, bind(c) :: music
+        type(audio_stream) :: stream
+        integer(c_int) :: sample_count
+        logical(c_bool) :: looping
+        
+        integer(c_int) :: ctx_type
+        type(c_ptr) :: ctx_data
+    end type music
+
 end module raylib
