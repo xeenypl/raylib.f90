@@ -39,7 +39,15 @@ module raylib
         integer(c_int) :: width
         integer(c_int) :: height
         integer(c_int) :: mipmaps
-        integer(c_int) :: format_
+        integer(c_int) :: format
     end type image
+
+    type, bind(c) :: texture
+        integer(c_int) :: id
+        integer(c_int) :: width
+        integer(c_int) :: height
+        integer(c_int) :: mipmaps
+        integer(c_int) :: format
+    end type texture
 
 end module raylib
