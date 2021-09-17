@@ -460,5 +460,9 @@ module raylib
     integer(c_int) :: CUBEMAP_LAYOUT_CROSS_THREE_BY_FOUR = 3 ! Layout is defined by a 3x4 cross with cubemap faces
     integer(c_int) :: CUBEMAP_LAYOUT_CROSS_FOUR_BY_THREE = 4 ! Layout is defined by a 4x3 cross with cubemap faces
     integer(c_int) :: CUBEMAP_LAYOUT_PANORAMA            = 5 ! Layout is defined by a panorama image (equirectangular map)
+    ! Font type, defines generation method
+    integer(c_int) :: FONT_DEFAULT = 0 ! Default font generation, anti-aliased
+    integer(c_int) :: FONT_BITMAP  = 1 ! Bitmap font generation, no anti-aliasing
+    integer(c_int) :: FONT_SDF     = 2 ! SDF font generation, requires external shader
 
 end module raylib
