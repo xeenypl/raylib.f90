@@ -322,5 +322,16 @@ module raylib
     integer(c_int) :: MOUSE_LEFT_BUTTON   = 0
     integer(c_int) :: MOUSE_RIGHT_BUTTON  = 1
     integer(c_int) :: MOUSE_MIDDLE_BUTTON = 2
-
+    ! Mouse cursor
+    integer(c_int) :: MOUSE_CURSOR_DEFAULT       = 0
+    integer(c_int) :: MOUSE_CURSOR_ARROW         = 1
+    integer(c_int) :: MOUSE_CURSOR_IBEAM         = 2
+    integer(c_int) :: MOUSE_CURSOR_CROSSHAIR     = 3
+    integer(c_int) :: MOUSE_CURSOR_POINTING_HAND = 4
+    integer(c_int) :: MOUSE_CURSOR_RESIZE_EW     = 5
+    integer(c_int) :: MOUSE_CURSOR_RESIZE_NS     = 6
+    integer(c_int) :: MOUSE_CURSOR_RESIZE_NWSE   = 7
+    integer(c_int) :: MOUSE_CURSOR_RESIZE_NESW   = 8
+    integer(c_int) :: MOUSE_CURSOR_RESIZE_ALL    = 9
+    integer(c_int) :: MOUSE_CURSOR_NOT_ALLOWED   = 10
 end module raylib
