@@ -334,4 +334,30 @@ module raylib
     integer(c_int) :: MOUSE_CURSOR_RESIZE_NESW   = 8
     integer(c_int) :: MOUSE_CURSOR_RESIZE_ALL    = 9
     integer(c_int) :: MOUSE_CURSOR_NOT_ALLOWED   = 10
+    ! Gamepad buttons
+    integer(c_int) :: GAMEPAD_BUTTON_UNKNOWN = 0
+    ! This is normally a DPAD
+    integer(c_int) :: GAMEPAD_BUTTON_LEFT_FACE_UP    = 1
+    integer(c_int) :: GAMEPAD_BUTTON_LEFT_FACE_RIGHT = 2
+    integer(c_int) :: GAMEPAD_BUTTON_LEFT_FACE_DOWN  = 3
+    integer(c_int) :: GAMEPAD_BUTTON_LEFT_FACE_LEFT  = 4
+    ! This normally corresponds with PlayStation and Xbox controllers
+    ! XBOX: [Y,X,A,B]
+    ! PS3: [Triangle,Square,Cross,Circle]
+    ! No support for 6 button controllers though..
+    integer(c_int) :: GAMEPAD_BUTTON_RIGHT_FACE_UP    = 5
+    integer(c_int) :: GAMEPAD_BUTTON_RIGHT_FACE_RIGHT = 6
+    integer(c_int) :: GAMEPAD_BUTTON_RIGHT_FACE_DOWN  = 7
+    integer(c_int) :: GAMEPAD_BUTTON_RIGHT_FACE_LEFT  = 8
+    integer(c_int) :: GAMEPAD_BUTTON_LEFT_TRIGGER_1   = 9
+    integer(c_int) :: GAMEPAD_BUTTON_LEFT_TRIGGER_2   = 10
+    integer(c_int) :: GAMEPAD_BUTTON_RIGHT_TRIGGER_1  = 11
+    integer(c_int) :: GAMEPAD_BUTTON_RIGHT_TRIGGER_2  = 12
+    integer(c_int) :: GAMEPAD_BUTTON_MIDDLE_LEFT      = 13 ! PS3 Select
+    integer(c_int) :: GAMEPAD_BUTTON_MIDDLE           = 14 ! PS Button/XBOX Button
+    integer(c_int) :: GAMEPAD_BUTTON_MIDDLE_RIGHT     = 15 ! PS3 Start
+    ! These are the joystick press in buttons
+    integer(c_int) :: GAMEPAD_BUTTON_LEFT_THUMB       = 16
+    integer(c_int) :: GAMEPAD_BUTTON_RIGHT_THUMB      = 17
+
 end module raylib
