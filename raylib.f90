@@ -34,4 +34,12 @@ module raylib
         real(c_float) :: height
     end type rectangle
 
+    type, bind(c) :: image
+        type(c_ptr) :: data
+        integer(c_int) :: width
+        integer(c_int) :: height
+        integer(c_int) :: mipmaps
+        integer(c_int) :: format_
+    end type image
+
 end module raylib
