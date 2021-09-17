@@ -368,7 +368,9 @@ module raylib
     integer(c_int) :: GAMEPAD_AXIS_RIGHT_TRIGGER = 5      ! [1..-1] (pressure-level)
     ! Material map index
     integer(c_int) :: MATERIAL_MAP_ALBEDO     = 0
+    integer(c_int) :: MATERIAL_MAP_DIFFUSE    = 0 ! same as MATERIAL_MAP_ALBEDO
     integer(c_int) :: MATERIAL_MAP_METALNESS  = 1
+    integer(c_int) :: MATERIAL_MAP_SPECULAR   = 1 ! same as MATERIAL_MAP_METALNESS
     integer(c_int) :: MATERIAL_MAP_NORMAL     = 2
     integer(c_int) :: MATERIAL_MAP_ROUGHNESS  = 3
     integer(c_int) :: MATERIAL_MAP_OCCLUSION  = 4
@@ -378,5 +380,34 @@ module raylib
     integer(c_int) :: MATERIAL_MAP_CUBEMAP    = 8        ! NOTE: Uses GL_TEXTURE_CUBE_MAP
     integer(c_int) :: MATERIAL_MAP_IRRADIANCE = 9        ! NOTE: Uses GL_TEXTURE_CUBE_MAP
     integer(c_int) :: MATERIAL_MAP_PREFILTER  = 10       ! NOTE: Uses GL_TEXTURE_CUBE_MAP
+    ! Shader location index
+    integer(c_int) :: SHADER_LOC_VERTEX_POSITION   = 0
+    integer(c_int) :: SHADER_LOC_VERTEX_TEXCOORD01 = 1
+    integer(c_int) :: SHADER_LOC_VERTEX_TEXCOORD02 = 2
+    integer(c_int) :: SHADER_LOC_VERTEX_NORMAL     = 3
+    integer(c_int) :: SHADER_LOC_VERTEX_TANGENT    = 4
+    integer(c_int) :: SHADER_LOC_VERTEX_COLOR      = 5
+    integer(c_int) :: SHADER_LOC_MATRIX_MVP        = 6
+    integer(c_int) :: SHADER_LOC_MATRIX_VIEW       = 7
+    integer(c_int) :: SHADER_LOC_MATRIX_PROJECTION = 8
+    integer(c_int) :: SHADER_LOC_MATRIX_MODEL      = 9
+    integer(c_int) :: SHADER_LOC_MATRIX_NORMAL     = 10
+    integer(c_int) :: SHADER_LOC_VECTOR_VIEW       = 11
+    integer(c_int) :: SHADER_LOC_COLOR_DIFFUSE     = 12
+    integer(c_int) :: SHADER_LOC_COLOR_SPECULAR    = 13
+    integer(c_int) :: SHADER_LOC_COLOR_AMBIENT     = 14
+    integer(c_int) :: SHADER_LOC_MAP_ALBEDO        = 15
+    integer(c_int) :: SHADER_LOC_MAP_DIFFUSE       = 15 ! same as SHADER_LOC_MAP_ALBEDO
+    integer(c_int) :: SHADER_LOC_MAP_METALNESS     = 16
+    integer(c_int) :: SHADER_LOC_MAP_SPECULAR      = 16 ! same as SHADER_LOC_MAP_METALNESS
+    integer(c_int) :: SHADER_LOC_MAP_NORMAL        = 17
+    integer(c_int) :: SHADER_LOC_MAP_ROUGHNESS     = 18
+    integer(c_int) :: SHADER_LOC_MAP_OCCLUSION     = 19
+    integer(c_int) :: SHADER_LOC_MAP_EMISSION      = 20
+    integer(c_int) :: SHADER_LOC_MAP_HEIGHT        = 21
+    integer(c_int) :: SHADER_LOC_MAP_CUBEMAP       = 22
+    integer(c_int) :: SHADER_LOC_MAP_IRRADIANCE    = 23
+    integer(c_int) :: SHADER_LOC_MAP_PREFILTER     = 24
+    integer(c_int) :: SHADER_LOC_MAP_BRDF          = 25
 
 end module raylib
