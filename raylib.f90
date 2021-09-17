@@ -114,4 +114,9 @@ module raylib
         type(vector3) :: scale
     end type transform
 
+    type, bind(c) :: bone_info
+        character(c_char), dimension(32) :: name
+        integer(c_int) :: parent
+    end type bone_info
+
 end module raylib
