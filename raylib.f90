@@ -453,5 +453,12 @@ module raylib
     integer(c_int) :: TEXTURE_WRAP_CLAMP         = 1 ! Clamps texture to edge pixel in tiled mode
     integer(c_int) :: TEXTURE_WRAP_MIRROR_REPEAT = 2 ! Mirrors and repeats the texture in tiled mode
     integer(c_int) :: TEXTURE_WRAP_MIRROR_CLAMP  = 3 ! Mirrors and clamps to border the texture in tiled mode
+    ! Cubemap layouts
+    integer(c_int) :: CUBEMAP_LAYOUT_AUTO_DETECT         = 0 ! Automatically detect layout type
+    integer(c_int) :: CUBEMAP_LAYOUT_LINE_VERTICAL       = 1 ! Layout is defined by a vertical line with faces
+    integer(c_int) :: CUBEMAP_LAYOUT_LINE_HORIZONTAL     = 2 ! Layout is defined by an horizontal line with faces
+    integer(c_int) :: CUBEMAP_LAYOUT_CROSS_THREE_BY_FOUR = 3 ! Layout is defined by a 3x4 cross with cubemap faces
+    integer(c_int) :: CUBEMAP_LAYOUT_CROSS_FOUR_BY_THREE = 4 ! Layout is defined by a 4x3 cross with cubemap faces
+    integer(c_int) :: CUBEMAP_LAYOUT_PANORAMA            = 5 ! Layout is defined by a panorama image (equirectangular map)
 
 end module raylib
