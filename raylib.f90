@@ -63,5 +63,14 @@ module raylib
         type(texture) :: depth
     end type render_texture
 
+    type, bind(c) :: n_patch_info
+        type(rectangle) :: source
+        integer(c_int) :: left
+        integer(c_int) :: top
+        integer(c_int) :: right
+        integer(c_int) :: bottom
+        integer(c_int) :: layout
+    end type n_patch_info
+
 
 end module raylib
