@@ -497,4 +497,217 @@ module raylib
     integer(c_int) :: NPATCH_THREE_PATCH_VERTICAL   = 1 ! Npatch layout: 1x3 tiles
     integer(c_int) :: NPATCH_THREE_PATCH_HORIZONTAL = 2 ! Npatch layout: 3x1 tiles
 
+    ! todo: Callbacks
+    ! typedef void (*TraceLogCallback)(int logLevel, const char *text, va_list args);  // Logging: Redirect trace log messages
+    ! typedef unsigned char* (*LoadFileDataCallback)(const char* fileName, unsigned int* bytesRead);      // FileIO: Load binary data
+    ! typedef bool (*SaveFileDataCallback)(const char *fileName, void *data, unsigned int bytesToWrite);  // FileIO: Save binary data
+    ! typedef char *(*LoadFileTextCallback)(const char* fileName);                // FileIO: Load text data
+    ! typedef bool (*SaveFileTextCallback)(const char *fileName, char *text);     // FileIO: Save text data
+
+    interface
+        ! Window-related functions
+        subroutine init_window (width, height, title) bind (c, name="InitWindow")
+            import :: c_char
+            import :: c_int
+            integer(c_int), intent(in), value :: width
+            integer(c_int), intent(in), value :: height
+            character(c_char), dimension(*), intent(in) :: title
+        end subroutine init_window
+
+        function window_should_close () result (res) bind (c, name="WindowShouldClose")
+            import :: c_bool
+            logical(c_bool) :: res
+        end function window_should_close
+
+        subroutine close_window() bind (c, name="CloseWindow")
+        end subroutine close_window
+
+        function is_window_ready () result (res) bind (c, name="IsWindowReady")
+            import :: c_bool
+            logical(c_bool) :: res
+        end function is_window_ready
+
+        function is_window_fullscreen () result (res) bind (c, name="IsWindowFullscreen")
+            import :: c_bool
+            logical(c_bool) :: res
+        end function is_window_fullscreen
+
+        function is_window_hidden () result (res) bind (c, name="IsWindowHidden")
+            import :: c_bool
+            logical(c_bool) :: res
+        end function is_window_hidden
+
+        function is_window_minimized () result (res) bind (c, name="IsWindowMinimized")
+            import :: c_bool
+            logical(c_bool) :: res
+        end function is_window_minimized
+
+        function is_window_maximized () result (res) bind (c, name="IsWindowMaximized")
+            import :: c_bool
+            logical(c_bool) :: res
+        end function is_window_maximized
+
+        function is_window_focused () result (res) bind (c, name="IsWindowFocused")
+            import :: c_bool
+            logical(c_bool) :: res
+        end function is_window_focused
+
+        function is_window_resized () result (res) bind (c, name="IsWindowResized")
+            import :: c_bool
+            logical(c_bool) :: res
+        end function is_window_resized
+
+        function is_window_state (flags) result (res) bind (c, name="IsWindowState")
+            import :: c_bool
+            import :: c_int
+            integer(c_int), intent(in), value :: flags
+            logical(c_bool) :: res
+        end function is_window_state
+
+        subroutine set_window_state (flags) bind (c, name="SetWindowState")
+            import :: c_int
+            integer(c_int), intent(in), value :: flags
+        end subroutine set_window_state
+
+        subroutine clear_window_state (flags) bind (c, name="ClearWindowState")
+            import :: c_int
+            integer(c_int), intent(in), value :: flags
+        end subroutine clear_window_state
+
+        subroutine toggle_fullscreen () bind (c, name="ToggleFullscreen")
+        end subroutine toggle_fullscreen
+ 
+        subroutine maximize_window () bind (c, name="MaximizeWindow")
+        end subroutine maximize_window
+        
+        subroutine minimize_window () bind (c, name="MinimizeWindow")
+        end subroutine minimize_window
+
+        subroutine Restore_window () bind (c, name="RestoreWindow")
+        end subroutine Restore_window
+
+        subroutine set_window_icon(image_) bind (c, name="SetWindowIcon")
+            import :: image
+            type(image), intent(in), value :: image_
+        end subroutine set_window_icon
+
+        subroutine set_window_title(title) bind (c, name="SetWindowTitle")
+            import :: c_char
+            character(c_char), dimension(*), intent(in) :: title
+        end subroutine set_window_title
+
+        subroutine set_window_position(x, y) bind (c, name="SetWindowPosition")
+            import :: c_int
+            integer(c_int), intent(in), value :: x
+            integer(c_int), intent(in), value :: y
+        end subroutine set_window_position
+
+        subroutine set_window_monitor(monitor) bind (c, name="SetWindowMonitor")
+            import :: c_int
+            integer(c_int), intent(in), value :: monitor
+        end subroutine set_window_monitor
+
+        subroutine set_window_min_size(width, height) bind (c, name="SetWindowMinSize")
+            import :: c_int
+            integer(c_int), intent(in), value :: width
+            integer(c_int), intent(in), value :: height
+        end subroutine set_window_min_size
+
+        subroutine set_window_size(width, height) bind (c, name="SetWindowSize")
+            import :: c_int
+            integer(c_int), intent(in), value :: width
+            integer(c_int), intent(in), value :: height
+        end subroutine set_window_size
+
+        function get_window_handel() result(res) bind (c, name="GetWindowHandel")
+            import :: c_ptr
+            type(c_ptr) :: res
+        end function get_window_handel
+
+        function get_window_width() result(res) bind (c, name="GetWindowWidth")
+            import :: c_int
+            integer(c_int) :: res
+        end function get_window_width
+
+        function get_window_height() result(res) bind (c, name="GetWindowHeight")
+            import :: c_int
+            integer(c_int) :: res
+        end function get_window_height
+
+        function get_monitor_count() result(res) bind (c, name="GetMonitorCount")
+            import :: c_int
+            integer(c_int) :: res
+        end function get_monitor_count
+
+        function get_current_monitor() result(res) bind (c, name="GetCurrentMonitor")
+            import :: c_int
+            integer(c_int) :: res
+        end function get_current_monitor
+
+        function get_monitor_position (monitor) result (res) bind (c, name="GetMonitorPosition")
+            import :: vector2
+            import :: c_int
+            integer(c_int), intent(in), value :: monitor
+            type(vector2) :: res
+        end function get_monitor_position
+
+        function get_monitor_width (monitor) result (res) bind (c, name="GetMonitorWidth")
+            import :: c_int
+            integer(c_int), intent(in), value :: monitor
+            integer(c_int) :: res
+        end function get_monitor_width
+
+        function get_monitor_height (monitor) result (res) bind (c, name="GetMonitorHeight")
+            import :: c_int
+            integer(c_int), intent(in), value :: monitor
+            integer(c_int) :: res
+        end function get_monitor_height
+
+        function get_monitor_physical_width (monitor) result (res) bind (c, name="GetMonitorPhysicalWidth")
+            import :: c_int
+            integer(c_int), intent(in), value :: monitor
+            integer(c_int) :: res
+        end function get_monitor_physical_width
+
+        function get_monitor_physical_height (monitor) result (res) bind (c, name="GetMonitorPhysicalHeight")
+            import :: c_int
+            integer(c_int), intent(in), value :: monitor
+            integer(c_int) :: res
+        end function get_monitor_physical_height
+
+        function get_monitor_refresh_rate (monitor) result (res) bind (c, name="GetMonitorRefreshRate")
+            import :: c_int
+            integer(c_int), intent(in), value :: monitor
+            integer(c_int) :: res
+        end function get_monitor_refresh_rate
+
+        function get_window_position () result (res) bind (c, name="GetWindowPosition")
+            import :: vector2
+            type(vector2) :: res
+        end function get_window_position
+
+        function get_window_scale_dpi () result (res) bind (c, name="GetWindowScaleDPI")
+            import :: vector2
+            type(vector2) :: res
+        end function get_window_scale_dpi
+
+        ! function get_monitor_name (monitor) result (res) bind (c, name="GetMonitorName")
+        !     import :: c_int
+        !     import :: c_char
+        !     integer(c_int), intent(in), value :: monitor
+        !     character(c_char), dimension(*) :: res
+        ! end function get_monitor_name
+
+        subroutine set_Clipboard_Text (text) bind (c, name="SetClipboardText")
+            import :: c_char
+            character(c_char), dimension(*) :: text
+        end subroutine set_Clipboard_Text
+
+        ! function get_clipboard_text () result (res) bind (c, name="GetClipboardText")
+        !     import :: c_char
+        !     integer(c_int), intent(in), value :: monitor
+        !     character(c_char), dimension(*) :: res
+        ! end function get_clipboard_text
+
+    end interface
 end module raylib
