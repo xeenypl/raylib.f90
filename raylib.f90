@@ -127,16 +127,24 @@ module raylib
         type(vector3) :: direction
     end type ray
 
-    type, bind(c) :: bounding_box
-        type(vector3) :: min
-        type(vector3) :: max
-    end type bounding_box
-
     type, bind(c) :: ray_hit_info
         logical(c_bool) :: hit
         real(c_float) :: distance
         type(vector3) :: position
         type(vector3) :: normal
     end type ray_hit_info
+
+    type, bind(c) :: bounding_box
+        type(vector3) :: min
+        type(vector3) :: max
+    end type bounding_box
+
+    type, bind(c) :: wave
+        integer(c_int) :: sample_count
+        integer(c_int) :: sample_rate
+        integer(c_int) :: sample_size
+        integer(c_int) :: channels
+        type(c_ptr) :: data
+    end type wave
 
 end module raylib
